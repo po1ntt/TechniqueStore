@@ -1,0 +1,62 @@
+﻿<Page x:Class="TechniqueStore.Pages.Profile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TechniqueStore.Pages"
+      mc:Ignorable="d" 
+       d:DesignHeight="800" d:DesignWidth="1200"
+      Background="#18205c"
+      Title="Profile">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="89*"/>
+            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="203*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="311*"/>
+            <RowDefinition Height="389*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Профиль" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Foreground="White"  FontWeight="Bold" Grid.ColumnSpan="3"  Height="54" Width="182"/>
+        <Button Height="auto" Click="Back_Click" Content="Назад" FontSize="30"></Button>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="1" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Text="Адреса" FontSize="60" Foreground="White" Margin="20"></TextBlock>
+                <Button VerticalAlignment="Center" Content="Добавить новый адрес" Background="Transparent" FontSize="25" Height="50" BorderBrush="Green" Margin="0,0,0,-20" BorderThickness="3"></Button>
+            </StackPanel>
+            <ListView x:Name="LvAdres" VirtualizingPanel.ScrollUnit="Pixel">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="55">
+                            <StackPanel Margin="0,0,0,0">
+                                <TextBlock Text="{Binding adress1}" FontSize="40" Foreground="White"></TextBlock>
+                            </StackPanel>
+                            <Grid Height="2" Margin="0,0,0,0" Width="auto" VerticalAlignment="Bottom" Background="Pink"></Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="1" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="1" Text="Карты" FontSize="60" Foreground="White" Margin="20"></TextBlock>
+                <Button VerticalAlignment="Center" Content="Добавить новую карту" Background="Transparent" FontSize="25" Height="50" BorderBrush="Green" Margin="0,0,0,-20" BorderThickness="3"></Button>
+            </StackPanel>
+            <ListView x:Name="LvCards" VirtualizingPanel.ScrollUnit="Pixel" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="55"  >
+                            <StackPanel>
+                                <TextBlock Text="{Binding NumberCard}" FontSize="40" Foreground="White"></TextBlock>
+                            </StackPanel>
+                            <Grid Height="2" Width="auto" VerticalAlignment="Bottom" Background="Pink"></Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+
+    </Grid>
+</Page>
